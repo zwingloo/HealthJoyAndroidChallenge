@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HealthJoyChallenge</string>
+    <string name="hint_api_key">API KEY</string>
+    <string name="proceed">proceed</string>
+    <string name="search">Search</string>
+    <string name="enter_search_phrase">Enter search phrase</string>
+    <string name="add_filter_disclaimer">Nothing to show.\n Add filter like cheeseburger and enjoy</string>
+
+</resources>

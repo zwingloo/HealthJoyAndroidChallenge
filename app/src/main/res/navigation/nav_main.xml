@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/apiKeyFragment">
+
+
+    <fragment
+        android:id="@+id/apiKeyFragment"
+        android:name="com.axel.healthjoychallenge.ui.ApiKeyFragment"
+        android:label="fragment_api_key"
+        tools:layout="@layout/fragment_api_key">
+        <action
+            android:id="@+id/action_apiKeyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.axel.healthjoychallenge.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>
