@@ -5,6 +5,6 @@
     <string name="search">Search</string>
     <string name="enter_search_phrase">Enter search phrase</string>
     <string name="add_filter_disclaimer">Nothing to show.\n Add filter like cheeseburger and enjoy</string>
-    <string name="put_api_key">You must put your API KEY</string>
+    <string name="place_your_api_key">You must place your API KEY</string>
 
 </resources>

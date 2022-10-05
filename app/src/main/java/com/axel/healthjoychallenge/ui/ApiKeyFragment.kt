@@ -1,7 +1,6 @@
 package com.axel.healthjoychallenge.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.axel.healthjoychallenge.R
 import com.axel.healthjoychallenge.databinding.FragmentApiKeyBinding
 import com.axel.healthjoychallenge.ui.home.HomeFragment.Companion.API_KEY
-import com.axel.healthjoychallenge.util.Constants.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -41,7 +39,7 @@ class ApiKeyFragment : Fragment() {
             if (apikey.isNotEmpty()) {
                 findNavController().navigate(R.id.action_apiKeyFragment_to_homeFragment, bundleOf(API_KEY to apikey))
             } else {
-                Toast.makeText(context, R.string.put_api_key, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, R.string.place_your_api_key, Toast.LENGTH_LONG).show()
             }
         }
     }
