@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.axel.healthjoychallenge.R
@@ -16,7 +17,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ApiKeyFragment : Fragment() {
-
 
 
     private var _binding: FragmentApiKeyBinding? = null
@@ -31,7 +31,6 @@ class ApiKeyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupApikey()
         setupBtnProceed()
 
     }
@@ -39,14 +38,12 @@ class ApiKeyFragment : Fragment() {
     private fun setupBtnProceed() {
         binding.btnProceed.setOnClickListener {
             val apikey = binding.etApiKey.text.toString()
-            Log.d(TAG, "ApiKeyFragment -> $apikey")
-            findNavController().navigate(R.id.action_apiKeyFragment_to_homeFragment, bundleOf(API_KEY to apikey))
+            if (apikey.isNotEmpty()) {
+                findNavController().navigate(R.id.action_apiKeyFragment_to_homeFragment, bundleOf(API_KEY to apikey))
+            } else {
+                Toast.makeText(context, R.string.put_api_key, Toast.LENGTH_LONG).show()
+            }
         }
-    }
-
-    private fun setupApikey() {
-        val apikey = "7PAtky8fqVM3sN2MJtDAehsDbO58gsHU"
-        binding.etApiKey.setText(apikey)
     }
 
     override fun onDestroy() {
